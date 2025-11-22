@@ -1,0 +1,18 @@
+# Arquivos temporários
+*.tmp
+*.log
+*.swp
+*~
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Backups
+*.bak
+*.backup

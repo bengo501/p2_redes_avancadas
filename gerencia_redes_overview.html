@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Redes Avançadas – Visão Geral</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { opacity: 0.9; font-size: 1.1rem; }
+        nav {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            margin: 0.5rem 1rem;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #4ca1af; text-decoration: underline; }
+        main { padding: 2rem; max-width: 1200px; margin: auto; }
+        
+        /* Section Styling */
+        section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+        h2 { 
+            border-left: 5px solid #4ca1af; 
+            padding-left: 1rem; 
+            color: #2c3e50; 
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        h3 { color: #34495e; margin-top: 1.5rem; }
+
+        /* Grid Layout for Cards */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .card h4 { margin: 0 0 0.5rem 0; color: #2c3e50; font-size: 1.2rem; }
+        .card p { color: #666; font-size: 0.95rem; flex-grow: 1; }
+        .card a.btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #4ca1af;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .card a.btn:hover { background: #3b8d99; }
+
+        /* Mermaid Diagram */
+        .mermaid-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #2c3e50;
+            color: #ecf0f1;
+            margin-top: 3rem;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad:true, theme: 'neutral' });</script>
+</head>
+<body>
+    <header>
+        <h1>Redes Avançadas – Visão Geral</h1>
+        <p>Gerência de Redes & Segurança da Informação</p>
+    </header>
+    <nav>
+        <a href="#diagrama">Mapa Mental</a>
+        <a href="#gerencia">Gerência de Redes</a>
+        <a href="#seguranca">Segurança de Redes</a>
+    </nav>
+    <main>
+        <!-- Diagrama Mermaid -->
+        <section id="diagrama">
+            <h2>Mapa de Conteúdos</h2>
+            <div class="mermaid-container">
+                <div class="mermaid">
+                mindmap
+                  root((Redes Avançadas))
+                    Gerência de Redes
+                      Resumo: Gerência
+                      Resumo: MIB e SMI
+                      Resumo: SNMP v1
+                      Resumo: SNMPv2
+                      Resumo: SNMPv3
+                      Exercícios SNMP
+                    Segurança de Redes
+                      Introdução à Segurança
+                      Segurança em Camadas
+                      Vulnerabilidades e Ataques
+                      Proteção e Defesa
+                      Caso NotPetya
+                      Exercícios CERT.br
+                      Exercícios Práticos
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de Gerência -->
+        <section id="gerencia">
+            <h2>📡 Gerência de Redes</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h4>Resumo – Gerência de Redes</h4>
+                    <p>Conceitos fundamentais, arquiteturas (centralizada, hierárquica, distribuída), modelo OSI e FCAPS.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_gerencia_redes.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Resumo – MIB e SMI</h4>
+                    <p>Estrutura de árvores OID, definição de objetos, macros OBJECT‑TYPE e exemplo de MIB customizada.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_mib_smi.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Resumo – SNMP (v1)</h4>
+                    <p>Arquitetura gerente‑agente, PDUs básicas, segurança por community string.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_snmp.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Resumo – SNMPv2</h4>
+                    <p>Evolução, novas operações (GetBulk, Inform), códigos de erro ampliados e boas práticas.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_snmpv2.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Resumo – SNMPv3</h4>
+                    <p>Arquitetura modular, USM (auth/priv), VACM (controle de acesso) e comparação com versões anteriores.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_snmpv3.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Exercícios SNMP</h4>
+                    <p>Lista de 10 informações gerenciáveis de um router Cisco ISR 4321 e mapeamento FCAPS.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/exercicios_snmp.md" target="_blank" class="btn">Ver Exercícios</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Segurança -->
+        <section id="seguranca">
+            <h2>🛡️ Segurança de Redes</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h4>Introdução à Segurança</h4>
+                    <p>Conceitos básicos (Ativos, Ameaças, Vulnerabilidades), Tríade CIA e tipos de ataques.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_seguranca_introducao.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Segurança em Camadas</h4>
+                    <p>Vulnerabilidades e mitigações da Camada Física (L1) até a Aplicação (L7). Firewalls e IDS/IPS.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_seguranca_redes_camadas.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Vulnerabilidades e Ataques</h4>
+                    <p>Engenharia Social, Spoofing (ARP, IP, DNS), DoS/DDoS e ataques de fragmentação.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_vulnerabilidades_ataques.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Proteção e Defesa</h4>
+                    <p>Técnicas de descoberta (Scan, Pentest), Firewalls (NGFW, Proxy), VPNs e Criptografia.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_protecao_vulnerabilidades.md" target="_blank" class="btn">Ler Resumo</a>
+                </div>
+                <div class="card">
+                    <h4>Caso NotPetya (WIRED)</h4>
+                    <p>Resumo do ataque cibernético mais devastador da história e o colapso da Maersk.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/resumo_notpetya_wired.md" target="_blank" class="btn">Ler Estudo de Caso</a>
+                </div>
+                <div class="card">
+                    <h4>Exercícios CERT.br</h4>
+                    <p>Análise estatística de incidentes no Brasil (2025): Portas visadas, Phishing e Amplificação.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/exercicios_cert_br.md" target="_blank" class="btn">Ver Estatísticas</a>
+                </div>
+                <div class="card">
+                    <h4>Exercícios Práticos</h4>
+                    <p>Guia prático de ataques (Smurf, ARP Spoofing) e defesa (Nmap, Hash, GPG) para laboratório.</p>
+                    <a href="file:///C:/Users/joxto/Downloads/p2_redes_avancadas/exercicios_praticos_seguranca.md" target="_blank" class="btn">Ver Prática</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Gerado por Antigravity – Assistente de Codificação Avançada.</p>
+        <p>© 2025 – Material de Estudo para Redes Avançadas.</p>
+    </footer>
+</body>
+</html>
