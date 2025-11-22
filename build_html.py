@@ -1,12 +1,18 @@
 import json
 import os
 
-# Ler o bundle de conteúdos
-with open('content_bundle.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
+# Escanear diretório por arquivos .md
+md_content_map = {}
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Criar um dicionário { "nome_arquivo": "conteúdo" }
-md_content_map = {item['Name']: item['Content'] for item in data}
+for filename in os.listdir(current_dir):
+    if filename.endswith(".md"):
+        filepath = os.path.join(current_dir, filename)
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                md_content_map[filename] = f.read()
+        except Exception as e:
+            print(f"Erro ao ler {filename}: {e}")
 
 # Converter para string JSON para injeção no JS
 json_content_string = json.dumps(md_content_map, ensure_ascii=False)
@@ -271,6 +277,7 @@ html_template = """<!DOCTYPE html>
                       Caso NotPetya
                       Exercícios CERT.br
                       Exercícios Práticos
+                      Guia Trabalho 2
                 </div>
             </div>
         </section>
@@ -401,6 +408,15 @@ html_template = """<!DOCTYPE html>
                     <div class="btn-group">
                         <a href="exercicios_praticos_seguranca.md" target="_blank" class="btn btn-secondary">Ver Arquivo Original</a>
                         <a href="#" onclick="openModal('exercicios_praticos_seguranca.md', 'Exercícios Práticos'); return false;" class="btn btn-primary">Ler Modo Visual</a>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="card" style="border-left: 5px solid #e74c3c;">
+                    <h4>Guia do Trabalho 2</h4>
+                    <p>Manual completo para a análise de vulnerabilidades: Conceitos (CVE, CVSS), Ferramentas (Nmap) e Comandos.</p>
+                    <div class="btn-group">
+                        <a href="trabalho2_analise_vulnerabilidades.md" target="_blank" class="btn btn-secondary">Ver Arquivo Original</a>
+                        <a href="#" onclick="openModal('trabalho2_analise_vulnerabilidades.md', 'Guia do Trabalho 2'); return false;" class="btn btn-primary">Ler Modo Visual</a>
                     </div>
                 </div>
             </div>
